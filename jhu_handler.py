@@ -10,7 +10,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
-JCHU_PATH = r"/mnt/c/Users/gaeta/OneDrive - CentraleSupelec/3A/Safeband/Projet - InfoNum/Datasets/BigDSimages/jhu_crowd_v2.0/jhu_crowd_v2.0"
+JHU_PATH = r"/mnt/c/Users/gaeta/OneDrive - CentraleSupelec/3A/Safeband/Projet - InfoNum/Datasets/BigDSimages/jhu_crowd_v2.0/jhu_crowd_v2.0"
 
 
 def plot_rectangle(ax:plt.Axes, x, y, w, h, color="r"):
@@ -18,9 +18,9 @@ def plot_rectangle(ax:plt.Axes, x, y, w, h, color="r"):
 
 
 
-class JCHU_handler:
+class JHU_handler:
     def __init__(self,kind="train"):
-        self.path = JCHU_PATH
+        self.path = JHU_PATH
         self.name = "JCHU_handler"
         self.description = "JCHU_handler is a class that handles the JCHU data"
         self.label_filename = "image_labels.txt"
