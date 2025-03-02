@@ -1,0 +1,32 @@
+
+
+Pour l'estimation des distance on doit décomposer l'espace en plusieurs dimensions. Pour simplifier on va diviser l'espace en 2 dimensions.
+
+Pour 2 têtes, On prend comme référence le plan qui passe par ces 2 têtes et dont une des 2 dimensions est parrallêle au sol (donc au bord inférieur de l'image). Ainsi on a les 2 dimensions:
+
+\begin{itemize}
+    \item la dimension X est la dimension parrallêle au bord inférieur de l'image
+    \item la dimension Y est celle perpendiculaire à celle-ci, mais qui suit le plan passant par les 2 têtes.
+\end{itemize}
+
+
+Ainsi, en obtenant la projection de lu vecteur disctantce sur ces 2 dimensions, on calcul la distance totale avec le théorème de pythagore.
+
+Par ailleurs on notera : $(x_1, y_1)$ et $(x_2, y_2) $les coordonnées des 2 têtes (en pixel), $(d_1,d_2)$ leur profondeur respective (en mêtre) et $(dX, dY)$ le vecteur distance entre les 2 têtes (en mêtres). Et $f$ la focale de la caméra (en pixel).
+
+\subsection{distance sur l'axe Y}
+
+Pour calculer la distance sur l'axe y, qui est en fait la différence de profondeur corrigé pour prendre en compte la position relative des personnes, on utilise le théorème d'alkachy.
+
+\subsection{distance sur l'axe X}
+
+Pour la calculer la distance dans cette dimensions c'est assez facile, en utilisant la formume \ref{eq:camera_relation} on détermine la distance en mêtre au niveau de x1 avec d1, puis au niveau de x2 avec d2.
+On fait l'hypothèse que la perspecive est parfaitement plongeante ce qui fait qu'il faut enlever la moitié de la différence pour obtenir la distance entre les 2 têtes (avec $d_2>d_1$).
+
+\begin{align}
+    dX1 &= (x_2-x_1) * d1 / focal \\
+    dX2 &= (x_2-x_1) * d2 / focal \\
+    dX  &= dX2 - (dX2-dX1)/2 \\
+        &= (dX2 + dX1) /2
+\end{align}
+

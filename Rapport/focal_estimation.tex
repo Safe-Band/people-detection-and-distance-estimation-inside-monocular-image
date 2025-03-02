@@ -1,0 +1,7 @@
+
+
+On détermine aussi la focale grâce à la taille des têtes. En effet, grâce à la relation \ref{eq:camera_relation} On estime une valeur de la focale pour chaques tête détecté, puis on prend comme focale le maximul de l'estimation kde gaussien (kernel-density estimation using a gaussian kernel) de la distribution des focales.
+
+FIGURE
+
+Cette focale est très importante puisque c'est elle qui nous permet de calculer la ditance sur l'axe X en fonction de la profondeur (toujours grâce à la relationn \ref{eq:camera_relation}).

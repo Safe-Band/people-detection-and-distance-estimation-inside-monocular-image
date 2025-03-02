@@ -67,8 +67,8 @@ class JHU_handler:
         #     os.path.join(self.path,self.kind,"images",f"{file_name}.jpg"),
         #     )
         # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        img = Image.open(os.path.join(self.path,self.kind,"images",f"{file_name}.jpg"))
-        return img, heads, infos
+        img_path = os.path.join(self.path,self.kind,"images",f"{file_name}.jpg")
+        return img_path, heads, infos
     
     def get_random_image(self):
         """return a random image from the dataset
@@ -86,7 +86,10 @@ class JHU_handler:
         #headbox
         occ_color = {1:"g", 2:"orange", 3:"r"}
         for i in range(len(heads)):
-            occlusion = heads.iloc[i]["o"]
+            if "o" not in heads.columns:
+                occlusion = 1
+            else:
+                occlusion = heads.iloc[i]["o"]
             # print("occlusion",occlusion)
             plot_rectangle(
                 ax,
