@@ -43,12 +43,42 @@ On fait l'hypothèse que la perspecive est parfaitement plongeante ce qui fait q
 
 \subsection{distance totale}
 
-Ainsi, on obtiens grâce au théorème de pythagore on peut calculer la distance inter-personnes en mêtre.
+Ainsi, on obtiens grâce au théorème de pythagore on peut calculer la distance inter-personnes en mètre.
 
-On peut ansi:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/exemple_dist_estimation.png}
+    \caption{Exemple de distance estimé entre 2 têtes.}
+    \label{fig:distance-estimation}
+\end{figure}
+
+Par exemple, sur notre exemple entre les 2 têtes de la Figure \ref{fig:distance-estimation}, on obtient les distances:
+
+\begin{itemize}
+    \item $d_1 = 20.82m (depth)$
+    \item $d_2 = 10.9m (depth)$
+    \item $dY = 9.93m$
+    \item $dX = 1.12m$
+    \item $d_{total} = 10.04m$
+\end{itemize}
+
+\section{Pour aller plus loin}
+
+Grâce aux estimations de distances entre les têtes, on peut envisager plusieurs applications direct:
 
 \begin{itemize}
     \item Soit construire un graphe de distance estimé entre les personnes dans le plan du sol.
     \item Soit placer directement les tête dans un espace 3D en utilisant les vecteurs de distance estimé, ce qui sera certainement plus précis 
 \end{itemize}
 
+Dans tous les cas ces mesures nous permettent d'estimer la densité de personnes dans une foule avec une simple caméra, et donc évaluer les risques associés ou simplement retracer les mouvements des personnes au cours du temps.
+
+\section{Conclusion}
+
+En conclusion, nous avons utilisé des modèles de deep learning avancés pour concevoir une application hybride efficace. Cette solution fusionne détection de têtes et estimation de profondeur, offrant des résultats satisfaisants.
+
+Notre méthode présente des limites, notamment l’imprécision héritée des modèles combinés, qu’on a tenté de compenser. Une approche "end-to-end" aurait pu être plus précise, mais nous manquions du dataset nécessaire.
+
+Ses atouts reposent sur l’utilisation de modèles pré-entraînés performants, demandant peu de ressources. Cela la rend idéale pour notre projet et facilement adaptable aux progrès futurs.
+
+Enfin, il nous manque une évaluation chiffrée pour juger pleinement notre méthode. Une expérience réelle avec caméra ou une simulation via un moteur de jeu vidéo pourrait serait la prochaine étape pour valider nos performances.
