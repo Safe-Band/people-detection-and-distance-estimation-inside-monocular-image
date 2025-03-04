@@ -1,5 +1,6 @@
 Rapport/output/
 models-checkpoints/
+.venv/
 
 
 

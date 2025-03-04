@@ -18,9 +18,20 @@ Par ailleurs on notera : $(x_1, y_1)$ et $(x_2, y_2) $les coordonnées des 2 tê
 
 Pour calculer la distance sur l'axe y, qui est en fait la différence de profondeur corrigé pour prendre en compte la position relative des personnes, on utilise le théorème d'alkachy.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/dY_estimation.drawio.png}
+    \caption{Modélisation pour la distance sur l'axe Y.}
+    \label{fig:alkachy}
+\end{figure}
+
+\begin{equation}
+    dY^2 = d_1^2 + d_2^2 - 2d_1d_2 ( 1 - ( \frac{|y_2-y_1|^2}{2*focal^2} ) )
+\end{equation}
+
 \subsection{distance sur l'axe X}
 
-Pour la calculer la distance dans cette dimensions c'est assez facile, en utilisant la formume \ref{eq:camera_relation} on détermine la distance en mêtre au niveau de x1 avec d1, puis au niveau de x2 avec d2.
+Pour la calculer la distance dans cette dimensions c'est assez facile, en utilisant la formume \ref{eq:camera-relation} on détermine la distance en mêtre au niveau de x1 avec d1, puis au niveau de x2 avec d2.
 On fait l'hypothèse que la perspecive est parfaitement plongeante ce qui fait qu'il faut enlever la moitié de la différence pour obtenir la distance entre les 2 têtes (avec $d_2>d_1$).
 
 \begin{align}
@@ -29,4 +40,15 @@ On fait l'hypothèse que la perspecive est parfaitement plongeante ce qui fait q
     dX  &= dX2 - (dX2-dX1)/2 \\
         &= (dX2 + dX1) /2
 \end{align}
+
+\subsection{distance totale}
+
+Ainsi, on obtiens grâce au théorème de pythagore on peut calculer la distance inter-personnes en mêtre.
+
+On peut ansi:
+
+\begin{itemize}
+    \item Soit construire un graphe de distance estimé entre les personnes dans le plan du sol.
+    \item Soit placer directement les tête dans un espace 3D en utilisant les vecteurs de distance estimé, ce qui sera certainement plus précis 
+\end{itemize}
 

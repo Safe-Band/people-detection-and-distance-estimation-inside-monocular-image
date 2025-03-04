@@ -15,3 +15,16 @@ Nous avons selectionné 2 autres datasets semblables que nous n'avons pas utilis
 \subsection{Finetuning}
 
 ILANN BLABLABLA
+
+\subsection{Résultats qualitatifs}
+
+Comme vous pouvez le voir sur l'exemple Figure \ref{fig:heads-detection}, la détection des têtes est plutôt bonne, lorsque l'on est dans les champs proches et/ou que l'on voit bien l'entièreté de la tête.
+
+Cependant le modèle atteint ses limites lorsqu'il y a beaucoup de têtes sur l'image, ou que celles-ci sont partiellement caché ou en mauvaise résolution (car trop loin)
+.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/heads_detection.png}
+    \caption{Résultats qualitatif de la détection des têtes.}
+    \label{fig:heads-detection}
+\end{figure}

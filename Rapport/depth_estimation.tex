@@ -13,9 +13,15 @@ On peut citer aussi \textit{DenseDepth} \cite{DenseDepth} pour de la prédiction
 
 Pour la réalisation de ce projet et après les avoir essayé notre choix s'est porté sur \textit{DepthAnythingv2} pour plusieurs raisons. En premier lieu, il faut comprendre que la plupart des modèles d'estimation monoculaire marchent bien sur des champs proches, mais ont tendance à être limité sur des champs lointains. Or ce qui nous interresse, comme nous utilisons des images extérieures à ciel ouvert (souvent), il s'agit souvent de champs lointains et extérieur, ce qui ne correspond pas aux datasets d'entrainement de ces modèles. 
 
-Or justement \textit{depthanythingv2} propose une version "outdoor" et en système métrique, ce qui convient précisément à notre application, notre choix s'est donc porté sur ce modèle et nous avons obtenu des résultats satisfaisants.
+Or justement \textit{depthanythingv2} propose une version "outdoor" et en système métrique, ce qui convient précisément à notre application, notre choix s'est donc porté sur ce modèle et nous avons obtenu des résultats plutôt satisfaisant comme vous pouvez le voir Figure \ref{fig:depth-estimation-exemple}.
 
-EXEMPLE DE RESULTAT
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/depth_map.png}
+    \includegraphics[width=0.45\textwidth]{images/depth_map_with_heads.png}
+    \caption{Carte de profondeur estimée par DepthAnythingv2 outdoor (base) sur notre exemple. Sans les headboxes (haut) et avec les headboxes (bas).}
+    \label{fig:depth-estimation-exemple}
+\end{figure}
 
 
 
