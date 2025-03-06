@@ -64,6 +64,8 @@ Par exemple, sur notre exemple entre les 2 têtes de la Figure \ref{fig:distance
 
 \section{Pour aller plus loin}
 
+Pour aller plus loin sur la détection de têtes, on pourrait continuer de fine-tuner notre modèle sur des dataset plus variés, ou plus grand, pour améliorer la généralisation de notre modèle. On pourrait aussi essayer d'augmenter la résolution de notre modèle pour détecter des têtes plus petites, ou plus éloignées.
+On pourrait de même finetuner un modèle de prédiction de la profondeur en construisant un dataset de profondeur à partir de nos mesures, ou à partir d'une simulation informatique de foules, où on pourrait obtenir directement les distances.
 Grâce aux estimations de distances entre les têtes, on peut envisager plusieurs applications direct:
 
 \begin{itemize}
@@ -73,6 +75,7 @@ Grâce aux estimations de distances entre les têtes, on peut envisager plusieur
 
 Dans tous les cas ces mesures nous permettent d'estimer la densité de personnes dans une foule avec une simple caméra, et donc évaluer les risques associés ou simplement retracer les mouvements des personnes au cours du temps.
 
+Finalement, on pourrait entraîner un dernier modèle d'intelligence artificielle prenant en entrée les distances entre les têtes ainsi que la profondeur donné par le modèle DepthAnything au niveau de la tête pour prédire la distance entre les personnes, et ainsi obtenir une estimation plus précise et adaptable à des situations plus complexes.
 \section{Conclusion}
 
 En conclusion, nous avons utilisé des modèles de deep learning avancés pour concevoir une application hybride efficace. Cette solution fusionne détection de têtes et estimation de profondeur, offrant des résultats satisfaisants.
